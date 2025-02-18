@@ -13,7 +13,7 @@ public class Main {
                     "Einstein",
                     "0001",
                     "Theoretical Physicist",
-                    "albert.einstein@physics.wld");
+                    "albert.einstein@physics.com");
 
         System.out.println(anEmployee);
         System.out.println(anotherEmployee);

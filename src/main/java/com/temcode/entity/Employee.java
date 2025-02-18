@@ -32,6 +32,7 @@ public class Employee {
         this.lastName = lastName;
         this.employeeId = employeeId;
         this.jobDescription = jobDescription;
+        this.email = email;
     }
 
     public String getId() {
