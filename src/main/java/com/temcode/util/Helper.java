@@ -1,5 +1,7 @@
 package com.temcode.util;
 
+import java.util.UUID;
+
 public class Helper {
 
     public static boolean isNullorEmpty(String str) {
@@ -7,6 +9,10 @@ public class Helper {
             return true;
         }
         return false;
+    }
+
+    public static String generateId() {
+        return UUID.randomUUID().toString();
     }
 
 }

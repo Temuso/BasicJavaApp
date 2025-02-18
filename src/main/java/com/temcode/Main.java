@@ -12,7 +12,8 @@ public class Main {
             Employee anotherEmployee = EmployeeFactory.createEmployee("Albert",
                     "Einstein",
                     "0001",
-                    "Theoretical Physicist");
+                    "Theoretical Physicist",
+                    "albert.einstein@physics.wld");
 
         System.out.println(anEmployee);
         System.out.println(anotherEmployee);

@@ -1,10 +1,14 @@
 package com.temcode.entity;
 
 public class Employee {
+
+
+    private String id;
     private String firstName;
     private String lastName;
     private String employeeId;
     private String jobDescription;
+    private String email;
 
     private Employee() {
 
@@ -13,18 +17,25 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" +
-                "firstName='" + firstName + '\'' +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", employeeId='" + employeeId + '\'' +
                 ", jobDescription='" + jobDescription + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 
-    private Employee(String firstName, String lastName, String employeeId, String jobDescription) {
+    private Employee(String id, String firstName, String lastName, String employeeId, String jobDescription, String email) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeId = employeeId;
         this.jobDescription = jobDescription;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -43,11 +54,22 @@ public class Employee {
         return jobDescription;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public static class Builder {
+        private String id;
         private String firstName;
         private String lastName;
         private String employeeId;
         private String jobDescription;
+        private String email;
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
 
         public Builder setFirstName(String firstName) {
             this.firstName = firstName;
@@ -69,8 +91,12 @@ public class Employee {
             return this;
         }
 
+        public Builder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
         public Employee build() {
-            return new Employee(firstName, lastName, employeeId, jobDescription);
+            return new Employee(id, firstName, lastName, employeeId, jobDescription, email);
         }
 
     }

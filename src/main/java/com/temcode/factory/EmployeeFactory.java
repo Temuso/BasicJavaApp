@@ -8,16 +8,18 @@ public class EmployeeFactory {
     public static Employee createEmployee(String firstName,
                                           String lastName,
                                           String employeeId,
-                                          String jobDescription) {
+                                          String jobDescription,
+                                          String email) {
 
 
         return new Employee.Builder()
+                .setId(Helper.generateId())
                 .setJobDescription(jobDescription)
                 .setLastName(lastName)
                 .setFirstName(firstName)
                 .setEmployeeId(employeeId)
+                .setEmail(email)
                 .build();
-
     }
 
     public static Employee createEmployee(String firstName, String lastName) {
@@ -29,6 +31,7 @@ public class EmployeeFactory {
         }
 
         return new Employee.Builder()
+                .setId(Helper.generateId())
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .build();
