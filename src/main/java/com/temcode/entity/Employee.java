@@ -1,5 +1,7 @@
 package com.temcode.entity;
 
+import java.time.LocalDate;
+
 public class Employee {
 
 
@@ -9,6 +11,9 @@ public class Employee {
     private String employeeId;
     private String jobDescription;
     private String email;
+
+
+    private LocalDate dob;
 
     private Employee() {
 
@@ -23,16 +28,18 @@ public class Employee {
                 ", employeeId='" + employeeId + '\'' +
                 ", jobDescription='" + jobDescription + '\'' +
                 ", email='" + email + '\'' +
+                ", dob=" + dob +
                 '}';
     }
 
-    private Employee(String id, String firstName, String lastName, String employeeId, String jobDescription, String email) {
+    private Employee(String id, String firstName, String lastName, String employeeId, String jobDescription, String email, LocalDate dob) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeId = employeeId;
         this.jobDescription = jobDescription;
         this.email = email;
+        this.dob = dob;
     }
 
     public String getId() {
@@ -59,6 +66,10 @@ public class Employee {
         return email;
     }
 
+    public LocalDate getDob() {
+        return dob;
+    }
+
     public static class Builder {
         private String id;
         private String firstName;
@@ -66,6 +77,7 @@ public class Employee {
         private String employeeId;
         private String jobDescription;
         private String email;
+        private LocalDate dob;
 
         public Builder setId(String id) {
             this.id = id;
@@ -96,8 +108,13 @@ public class Employee {
             this.email = email;
             return this;
         }
+
+        public Builder setDob(LocalDate dob) {
+            this.dob = dob;
+            return this;
+        }
         public Employee build() {
-            return new Employee(id, firstName, lastName, employeeId, jobDescription, email);
+            return new Employee(id, firstName, lastName, employeeId, jobDescription, email, dob);
         }
 
     }

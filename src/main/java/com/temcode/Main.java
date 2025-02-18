@@ -3,6 +3,8 @@ package com.temcode;
 import com.temcode.entity.Employee;
 import com.temcode.factory.EmployeeFactory;
 
+import java.time.LocalDate;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -13,7 +15,8 @@ public class Main {
                     "Einstein",
                     "0001",
                     "Theoretical Physicist",
-                    "albert.einstein@physics.com");
+                    "albert.einstein@physics.com",
+                    LocalDate.of(1961,6,15));
 
         System.out.println(anEmployee);
         System.out.println(anotherEmployee);
